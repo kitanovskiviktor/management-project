@@ -1,9 +1,13 @@
 package com.example.managementproject.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name="listing")
+@Getter
+@Setter
 public class Listing {
 
     @Id
@@ -12,6 +16,7 @@ public class Listing {
 
     private String name;
 
+    private String city;
     private String location;
 
     @ManyToOne
