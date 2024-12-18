@@ -16,6 +16,11 @@ public class ListingController {
     @Autowired
     private ListingService listingService;
 
+    @GetMapping
+    public List<Listing> getListingsList(){
+        return listingService.getListings();
+    }
+
     @GetMapping("/category/{categoryName}")
     public List<Listing> getListingsByCategoryName(@PathVariable  String categoryName){
         return listingService.getListingsByCategoryName(categoryName);
@@ -41,13 +46,4 @@ public class ListingController {
     public void deleteListing(@PathVariable Long id){
         listingService.deleteListing(id);
     }
-
-
-
-
-
-
-
-
-
 }
